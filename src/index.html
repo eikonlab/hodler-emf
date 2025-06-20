@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>eikon parcel starter</title>
@@ -22,7 +22,7 @@
             <a href="#about">À propos</a>
           </li>
           <li class="header-burger-link">
-            <a href="#artiste">Artistes</a>
+            <a href="#artistes">Artistes</a>
           </li>
           <li class="header-burger-link">
             <a href="#application">Candidature</a>
@@ -77,6 +77,50 @@
             tâches de la main. Entre le monde des arts visuels, des beaux-arts
             et celui plus pratique de l’artisanat et de l’industrie. 
           </p>
+        </div>
+      </section>
+      <section id="artistes">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <h2 class="artistes-title">Présentation des artistes</h2>
+            </div>
+            <div class="col-12 col-md-6 offset-md-1">
+              <div class="artiste-thumb-container">
+                <extends
+                  src="artiste.html"
+                  locals='{"name": "pilloud", "fullName": "Isabelle Pilloud", "type": "artiste suisse"}'
+                >
+                  <block name="description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum
+                    </p>
+                  </block>
+                  <block name="links">
+                    <a href="">instagram</a>
+                    <a href="">facebook</a>
+                  </block>
+                </extends>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="artistes-img-cont">
+          <img
+            src="img/artiste-bg-main.png?as=webp"
+            alt="Image d'un tableau de Hodler"
+          />
+          <img
+            src="img/artiste-bg-sky.png?as=webp"
+            alt="Image d'un tableau de Hodler"
+          />
         </div>
       </section>
       <div class="background"></div>

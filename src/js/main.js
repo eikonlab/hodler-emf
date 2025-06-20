@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   {
     //header down up
-
     const header = document.querySelector(".header-nav");
 
     let lastScrollPosition = 0;
