@@ -12,3 +12,32 @@ img,
 video {
   display: block;
 }
+
+body {
+  font-family: "Satoshi", sans-serif;
+  color: $light;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: fixed;
+  z-index: 3;
+  inset: 0;
+  background: rgba($dark, 0.1);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
