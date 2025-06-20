@@ -12,3 +12,45 @@ img,
 video {
   display: block;
 }
+
+body {
+  font-family: "Satoshi", sans-serif;
+  color: $light;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: fixed;
+  z-index: 3;
+  inset: 0;
+  background: rgba($dark, 0.1);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px; /* 112.5% */
+}
+
+@include bp("md") {
+  p {
+    font-size: 24px;
+    line-height: 28px; /* 112.5% */
+  }
+}

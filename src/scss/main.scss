@@ -1,4 +1,10 @@
+@import "bootstrap/scss/bootstrap-grid";
+
+@import "var";
 @import "font";
 @import "base";
 @import "layout";
-@import "modules/example";
+@import "modules/header";
+@import "modules/banner";
+@import "modules/about";
+@import "modules/slider";
