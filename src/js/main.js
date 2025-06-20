@@ -50,4 +50,75 @@ document.addEventListener("DOMContentLoaded", () => {
       lastScrollPosition = currentScrollPosition;
     });
   }
+  {
+    // section about - Scroll animations
+    
+    const aboutText = document.querySelectorAll(".about-text");
+    const aboutBg = document.querySelector("#about-bg");
+    
+
+    // Desktop animations
+    if (window.innerWidth > 768) {
+
+      // Animate the text in the about section
+      gsap.from(aboutText, {
+        y: 100,
+        skewX: -5,
+        opacity: 0,
+        duration: 1,
+        stagger: 1,
+        scrollTrigger: {
+          trigger: aboutText,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+          markers: false,
+        },
+      });
+  
+      // Animate the background in the about section
+      gsap.from(aboutBg, {
+        y: "100%",
+        skewX: 10,
+        scrollTrigger: {
+          trigger: aboutBg,
+          start: "top 100%",
+          end: "bottom 0%",
+          scrub: true,
+          markers: false,
+        },
+      });
+
+    }
+    // Mobile animations
+    else {
+      // Animate the text in the about section
+      gsap.from(aboutText, {
+        y: 100,
+        skewX: 10,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: aboutText,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+          markers: false,
+        },
+      });
+
+      // Animate the background in the about section
+      gsap.from(aboutBg, {
+        y: "100%",
+        scrollTrigger: {
+          trigger: aboutBg,
+          start: "top 100%",
+          end: "bottom 0%",
+          scrub: true,
+          markers: false,
+        },
+      });
+    }
+  }
 });
