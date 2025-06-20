@@ -1,0 +1,188 @@
+#artistes {
+  background: $dark;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding-top: 10vh;
+}
+
+.artistes-img-cont {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &:nth-child(2) {
+      z-index: -1;
+      opacity: 0.5;
+    }
+  }
+}
+
+.artiste-thumb-container {
+  margin-top: 10vh;
+}
+
+.artiste-thumb-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .artiste-thumb-name {
+    position: absolute;
+    font-size: 28px;
+    font-weight: 500;
+    text-decoration: underline;
+    bottom: 10%;
+  }
+
+  .artiste-thumb-work {
+    width: 40vw;
+  }
+}
+
+.artiste-thumb-desktop {
+  display: none;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid $light;
+
+  .artiste-thumb-name {
+    font-size: 40px;
+    font-weight: 500;
+  }
+}
+
+.artiste-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 10vh;
+  background: $dark;
+  padding: 4vh 4vw;
+  overflow-y: scroll;
+}
+
+.artiste-popup-head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 72px;
+}
+
+.artiste-popup-name {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.artiste-popup-type {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.artiste-popup-flex-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.artiste-popup-img {
+  position: absolute;
+  width: 30vw;
+  right: 4vw;
+  opacity: 0.6;
+  bottom: 4vh;
+  z-index: -1;
+}
+
+.artiste-popup-links-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  a {
+    font-size: 24px;
+
+    &:hover {
+      background: $light;
+      color: $dark;
+    }
+  }
+}
+.artiste-close-btn {
+  position: absolute;
+  top: 4vh;
+  right: 4vw;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.05;
+    rotate: 90deg;
+  }
+}
+
+@include bp("md") {
+  #artistes {
+    padding-top: 35vh;
+  }
+  .artiste-thumb-mobile {
+    display: none;
+  }
+
+  .artiste-thumb-desktop {
+    display: flex;
+  }
+  .artiste-thumb-container {
+    margin-top: 0;
+  }
+
+  .artiste-popup {
+    padding: 6vh 4vw;
+  }
+
+  .artiste-close-btn {
+    top: 6vh;
+  }
+
+  .artiste-popup-name {
+    font-size: 110px;
+  }
+
+  .artiste-popup-type {
+    font-size: 40px;
+  }
+
+  .artiste-popup-flex-img {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .artiste-popup-img {
+    position: static;
+    width: 20vw;
+    opacity: 1;
+  }
+
+  .artiste-popup-flex-description {
+    flex-direction: row;
+    gap: 15vw;
+
+    p {
+      width: 40vw;
+    }
+  }
+
+  .artiste-popup-links-cont {
+    align-items: flex-end;
+  }
+}

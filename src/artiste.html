@@ -1,0 +1,41 @@
+<div class="artiste" data-value="{{name}}">
+  <div class="artiste-thumb-mobile">
+    <h3 class="artiste-thumb-name">{{fullName}}</h3>
+    <img
+      src="img/{{name}}-work.jpg?as=webp"
+      alt="work of {{fullName}}"
+      class="artiste-thumb-work"
+    />
+  </div>
+  <div class="artiste-thumb-desktop">
+    <h3 class="artiste-thumb-name">{{fullName}}</h3>
+    <img src="img/arrow.svg" alt="arrow" class="artiste-thumb-arrow" />
+  </div>
+
+  <!-- Popups -->
+  <div class="artiste-popup">
+    <div class="artiste-popup-head">
+      <h3 class="artiste-popup-name">{{fullName}}</h3>
+      <p class="artiste-popup-type">{{type}}</p>
+    </div>
+    <div class="artiste-popup-flex-img">
+      <div class="artiste-popup-flex-description">
+        <block name="description"></block>
+        <div class="artiste-popup-links-cont">
+          <block name="links"></block>
+        </div>
+      </div>
+      <img
+        src="img/{{name}}-portrait.jpg?as=webp"
+        alt=""
+        class="artiste-popup-img"
+      />
+    </div>
+    <img
+      src="img/cross.svg"
+      aria-label="Close popup"
+      alt=""
+      class="artiste-close-btn"
+    />
+  </div>
+</div>
