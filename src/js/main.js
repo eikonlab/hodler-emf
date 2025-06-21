@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         skewX: -5,
         opacity: 0,
         duration: 1,
-        stagger: 1,
+        stagger: 2,
         scrollTrigger: {
           trigger: aboutText,
           start: "top 80%",
@@ -115,6 +115,63 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: aboutBg,
           start: "top 100%",
           end: "bottom 0%",
+          scrub: true,
+          markers: false,
+        },
+      });
+    }
+
+    // Animate the title in the about section (title is big text after text of about section)
+    const aboutTitle = document.querySelectorAll(".about-title");
+    const aboutTitleContainer = document.querySelector(".about-title-container");
+
+    gsap.from(aboutTitle, {
+      y: 100,
+      skewX: 10,
+      opacity: 0,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: aboutTitleContainer,
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+        markers: false,
+      },
+    });
+
+
+    // animate the text exposition of the about section
+    const aboutExposition = document.querySelectorAll(".about-exposition");
+
+    // Desktop animations for exposition
+    if (window.innerWidth > 768) {
+      gsap.from(aboutExposition, {
+        y: 100,
+        skewX: 10,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: aboutExposition,
+          start: "top 100%",
+          end: "bottom 70%",
+          scrub: true,
+          markers: true,
+        },
+      });
+    }
+    // Mobile animations for exposition
+    else {
+      gsap.from(aboutExposition, {
+        y: 100,
+        skewX: 10,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: aboutExposition,
+          start: "top 80%",
+          end: "bottom 20%",
           scrub: true,
           markers: false,
         },
