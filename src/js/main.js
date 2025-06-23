@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top 100%",
           end: "bottom 70%",
           scrub: true,
-          markers: true,
+          markers: false,
         },
       });
     }

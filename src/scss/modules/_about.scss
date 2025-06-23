@@ -137,3 +137,10 @@
     font-size: 2vw;
   }
 }
+
+.about-exposition-address {
+    &:hover {
+    background: $light;
+    color: $dark;
+  }
+}
