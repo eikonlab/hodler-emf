@@ -51,14 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   {
     // section about - Scroll animations
-    
+
     const aboutText = document.querySelectorAll(".about-text");
     const aboutBg = document.querySelector("#about-bg");
-    
 
     // Desktop animations
     if (window.innerWidth > 768) {
-
       // Animate the text in the about section
       gsap.from(aboutText, {
         y: 100,
@@ -74,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
           markers: false,
         },
       });
-  
+
       // Animate the background in the about section
       gsap.from(aboutBg, {
         y: "100%",
@@ -87,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
           markers: false,
         },
       });
-
     }
     // Mobile animations
     else {
@@ -119,5 +116,47 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
     }
+  }
+
+  {
+    // Popup
+    const thumbs = document.querySelectorAll(".artiste-thumb");
+    const popups = document.querySelectorAll(".artiste-popup");
+    const bgPop = document.querySelector(".background.artiste");
+    const body = document.querySelector("body ");
+
+    thumbs.forEach((thumb) => {
+      const value = thumb.dataset.value;
+      console.log("ok");
+
+      thumb.addEventListener("click", () => {
+        console.log("okdasd");
+        popups.forEach((popup) => popup.classList.remove("open"));
+        popups.forEach((popup) => {
+          popup.classList.add("open");
+          bgPop.classList.add("active");
+          body.classList.add("no-scroll");
+
+          console.log("yee");
+          const closeBtn = popup.querySelector(".artiste-close-btn-cont");
+          console.log(closeBtn);
+
+          if (closeBtn) {
+            console.log("yeedasd");
+            closeBtn.addEventListener("click", (e) => {
+              e.stopPropagation(); // prevent bubbling
+              popup.classList.remove("open");
+              bgPop.classList.remove("active");
+              body.classList.remove("no-scroll");
+            });
+          }
+          bgPop.addEventListener("click", () => {
+            popup.classList.remove("open");
+            bgPop.classList.remove("active");
+            body.classList.remove("no-scroll");
+          });
+        });
+      });
+    });
   }
 });
