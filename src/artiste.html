@@ -1,5 +1,5 @@
-<div class="artiste" data-value="{{name}}">
-  <div class="artiste-thumb-mobile">
+<div class="artiste">
+  <div class="artiste-thumb mobile" data-value="{{name}}">
     <h3 class="artiste-thumb-name">{{fullName}}</h3>
     <img
       src="img/{{name}}-work.jpg?as=webp"
@@ -7,13 +7,24 @@
       class="artiste-thumb-work"
     />
   </div>
-  <div class="artiste-thumb-desktop">
+  <div class="artiste-thumb desktop" data-value="{{name}}">
     <h3 class="artiste-thumb-name">{{fullName}}</h3>
-    <img src="img/arrow.svg" alt="arrow" class="artiste-thumb-arrow" />
+    <svg
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      viewBox="0 0 15 12"
+      class="artiste-thumb-arrow-cont"
+    >
+      <path
+        class="artiste-thumb-arrow"
+        d="M14.1,5.7c0,.2,0,.4-.2.6l-4.9,4.9c-.2.1-.3.2-.5.2s-.4,0-.5-.2c-.1-.1-.2-.3-.2-.5s0-.2,0-.3c0,0,0-.2.1-.2l4-3.7H1c-.2,0-.4,0-.5-.2-.1-.1-.2-.3-.2-.5s0-.4.2-.5c.1-.1.3-.2.5-.2h10.8s-3.9-3.7-3.9-3.7c0,0-.1-.1-.1-.2,0,0,0-.2,0-.3,0-.2,0-.4.2-.5.1-.1.3-.2.5-.2s.2,0,.3,0c0,0,.2,0,.3.2l4.9,4.9c.2.2.2.3.2.5Z"
+      />
+    </svg>
   </div>
 
   <!-- Popups -->
-  <div class="artiste-popup">
+  <div class="artiste-popup {{name}}">
     <div class="artiste-popup-head">
       <h3 class="artiste-popup-name">{{fullName}}</h3>
       <p class="artiste-popup-type">{{type}}</p>
@@ -31,11 +42,8 @@
         class="artiste-popup-img"
       />
     </div>
-    <img
-      src="img/cross.svg"
-      aria-label="Close popup"
-      alt=""
-      class="artiste-close-btn"
-    />
+    <div class="artiste-close-btn-cont">
+      <img src="img/cross.svg" aria-label="Close popup" alt="" />
+    </div>
   </div>
 </div>

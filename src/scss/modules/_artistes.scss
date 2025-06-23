@@ -1,9 +1,15 @@
 #artistes {
   background: $dark;
   position: sticky;
+  z-index: 2;
   top: 0;
   height: 100vh;
   padding-top: 10vh;
+}
+
+.artiste {
+  position: relative;
+  z-index: 3;
 }
 
 .artistes-img-cont {
@@ -28,9 +34,11 @@
 
 .artiste-thumb-container {
   margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.artiste-thumb-mobile {
+.artiste-thumb.mobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,16 +57,47 @@
   }
 }
 
-.artiste-thumb-desktop {
+.artiste-thumb.desktop {
   display: none;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 1px solid $light;
+  padding: 0 1vw;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: $light;
+    z-index: -1;
+  }
 
   .artiste-thumb-name {
     font-size: 40px;
     font-weight: 500;
   }
+
+  &:hover {
+    color: $dark;
+    &::before {
+      height: 100%;
+    }
+
+    .artiste-thumb-arrow {
+      fill: $dark;
+    }
+  }
+}
+
+.artiste-thumb-arrow-cont {
+  width: 20px;
+}
+
+.artiste-thumb-arrow {
+  fill: $light;
 }
 
 .artiste-popup {
@@ -68,8 +107,15 @@
   bottom: 0;
   top: 10vh;
   background: $dark;
+  z-index: 6;
   padding: 4vh 4vw;
   overflow-y: scroll;
+  transition: transform 0.3s;
+  transform: translateY(110%);
+
+  &.open {
+    transform: translateY(0);
+  }
 }
 
 .artiste-popup-head {
@@ -118,7 +164,7 @@
     }
   }
 }
-.artiste-close-btn {
+.artiste-close-btn-cont {
   position: absolute;
   top: 4vh;
   right: 4vw;
@@ -135,12 +181,13 @@
   #artistes {
     padding-top: 35vh;
   }
-  .artiste-thumb-mobile {
+  .artiste-thumb.mobile {
     display: none;
   }
 
-  .artiste-thumb-desktop {
+  .artiste-thumb.desktop {
     display: flex;
+    cursor: pointer;
   }
   .artiste-thumb-container {
     margin-top: 0;
@@ -148,6 +195,7 @@
 
   .artiste-popup {
     padding: 6vh 4vw;
+    overflow: hidden;
   }
 
   .artiste-close-btn {
