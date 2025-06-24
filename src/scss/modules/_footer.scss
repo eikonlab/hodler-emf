@@ -14,6 +14,17 @@ footer {
   top: 10vh;
   bottom: 0;
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 60%
+    );
+  }
+
   img {
     height: 100%;
     width: 100%;
@@ -78,6 +89,19 @@ footer {
   height: 100%;
 }
 
+.footer-credits {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 300;
+
+  a {
+    &:hover {
+      background: $light;
+      color: $dark;
+    }
+  }
+}
+
 .footer-link {
   &:hover {
     background: $light;
@@ -94,7 +118,6 @@ footer {
     flex-direction: row;
     height: 100%;
     align-items: flex-end;
-
     .frib {
       margin-bottom: 5px;
     }
