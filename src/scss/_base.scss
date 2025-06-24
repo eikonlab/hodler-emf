@@ -16,6 +16,7 @@ video {
 body {
   font-family: "Satoshi", sans-serif;
   color: $light;
+  background: $dark;
 
   &.no-scroll {
     overflow: hidden;
