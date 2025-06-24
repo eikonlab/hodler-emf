@@ -1,0 +1,14 @@
+.application {
+    background: $dark;
+    position: relative;
+}
+
+.application .application-description {
+    margin: 10vh 0;
+}
+
+@include bp("md") {
+    .application .btn {
+        margin: 20vh 0 0 0;
+    }
+}
