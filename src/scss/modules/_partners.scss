@@ -10,15 +10,26 @@
   margin: 0 5vw;
 }
 
-.partners img {
-  width: auto;
-  height: 100px;
+.partner-link {
+  img {
+    width: auto;
+    height: 100px;
+    max-width: 30vw;
+    transition: scale 0.3s;
+  }
+
+  &:hover {
+    img {
+      scale: 1.05;
+    }
+  }
 }
 
 .partner-container {
   margin: 10vh auto;
   display: flex;
   justify-content: space-between;
-  row-gap: 10vh;
+  row-gap: 12vh;
   flex-wrap: wrap;
+  gap: 5vw;
 }

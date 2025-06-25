@@ -10,10 +10,14 @@
   position: relative;
 }
 
+.background.artiste {
+  position: fixed;
+}
+
 .artistes-img-cont {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
 
   img {
     position: absolute;
@@ -24,14 +28,16 @@
     object-fit: cover;
 
     &:nth-child(2) {
-      z-index: -1;
+      z-index: -2;
       opacity: 0.5;
       transform: translateY(-30%);
+      pointer-events: none;
     }
   }
 }
 
 .artiste-thumb-container {
+  position: relative;
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
@@ -107,7 +113,7 @@
   bottom: 0;
   top: 10vh;
   background: $dark;
-  z-index: 6;
+  z-index: 13;
   padding: 4vh 4vw;
   overflow-y: scroll;
   transition: transform 0.3s;
