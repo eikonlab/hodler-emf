@@ -199,6 +199,27 @@
                     <a href="">facebook</a>
                   </block>
                 </extends>
+                <extends
+                  src="artiste.html"
+                  locals='{"name": "pilloudd", "fullName": "Isabelle Pilloooud", "type": "artiste suisse"}'
+                >
+                  <block name="description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum
+                    </p>
+                  </block>
+                  <block name="links">
+                    <a href="">instagram</a>
+                    <a href="">facebook</a>
+                  </block>
+                </extends>
 
                 <div class="background artiste"></div>
               </div>
@@ -209,35 +230,35 @@
           <img
             src="img/artiste-bg-main.png?as=webp"
             alt="Image d'un tableau de Hodler"
+            class="moutains"
           />
           <img
-            src="img/artiste-bg-sky.png?as=webp"
+            src="img/artiste-bg-sky-grad.png?as=webp"
             alt="Image d'un tableau de Hodler"
+            class="sky"
           />
         </div>
       </section>
       <section class="application">
         <div class="slider-container">
           <div class="slider reverse">
-            <p>Appel à candidature  -</p>
-            <p>Appel à candidature  -</p>
-            <p>Appel à candidature  -</p>
-            <p>Appel à candidature  -</p>
-            <p>Appel à candidature  -</p>
-            <p>Appel à candidature  -</p>
+            <p>Appel à candidature -</p>
+            <p>Appel à candidature -</p>
+            <p>Appel à candidature -</p>
+            <p>Appel à candidature -</p>
+            <p>Appel à candidature -</p>
+            <p>Appel à candidature -</p>
           </div>
         </div>
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-5">
               <p class="application-description">
-                Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua ?
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua ?
               </p>
             </div>
-            <div class="col-6 offset-6  col-md-3 offset-md-1">
+            <div class="col-6 offset-6 col-md-3 offset-md-1">
               <a href="" class="btn pan light"><span>Postuler →</span></a>
             </div>
           </div>
@@ -280,7 +301,7 @@
               </p>
             </div>
           </div>
-          <div class="col-6 col-md-5">
+          <div class="col-6 col-md-6">
             <div class="footer-logos">
               <a
                 href="https://www.fr.ch/emf"
@@ -300,10 +321,23 @@
                   class="frib"
                   alt=""
               /></a>
-              <p class="footer-legal">© Etat de Fribourg</p>
+              <div>
+                <p class="footer-legal">© Etat de Fribourg</p>
+                <p class="footer-credits">
+                  Design et code par
+                  <a href="https://basile-kamm.ch" target="_blank">Basile</a> &
+                  <a href="https://sloowresound.ch" target="_blank">Arno</a>
+                  /
+                  <a
+                    href="https://www.eikon.ch/departments/eikonlab/"
+                    target="_blank"
+                    >Eikonlab</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-2">
             <div class="footer-links">
               <a
                 href="https://www.fr.ch/emf"

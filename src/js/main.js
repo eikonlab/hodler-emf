@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Burger menu
     const burger = document.querySelector(".header-burger-icon");
     const menu = document.querySelector(".header-burger-links");
+    const menuLinks = document.querySelectorAll(".header-burger-link");
     const bg = document.querySelector(".background");
 
     burger.addEventListener("click", () => {
@@ -20,6 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove("active");
       bg.classList.remove("active");
       body.classList.remove("no-scroll");
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          burger.classList.remove("active");
+          menu.classList.remove("active");
+          bg.classList.remove("active");
+          body.classList.remove("no-scroll");
+        }, 200);
+      });
     });
 
     window.addEventListener("resize", () => {
@@ -119,7 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animate the title in the about section (title is big text after text of about section)
     const aboutTitle = document.querySelectorAll(".about-title");
-    const aboutTitleContainer = document.querySelector(".about-title-container");
+    const aboutTitleContainer = document.querySelector(
+      ".about-title-container"
+    );
 
     gsap.from(aboutTitle, {
       y: 100,
@@ -134,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
         markers: false,
       },
     });
-
 
     // animate the text exposition of the about section
     const aboutExposition = document.querySelectorAll(".about-exposition");
@@ -181,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popups = document.querySelectorAll(".artiste-popup");
     const bgPop = document.querySelector(".background.artiste");
     const body = document.querySelector("body ");
+    const application = document.querySelector(".application");
 
     thumbs.forEach((thumb) => {
       const value = thumb.dataset.value;
@@ -189,31 +203,93 @@ document.addEventListener("DOMContentLoaded", () => {
       thumb.addEventListener("click", () => {
         console.log("okdasd");
         popups.forEach((popup) => popup.classList.remove("open"));
-        popups.forEach((popup) => {
-          popup.classList.add("open");
-          bgPop.classList.add("active");
-          body.classList.add("no-scroll");
 
-          console.log("yee");
+        popups.forEach((popup) => {
+          if (popup.classList.contains(value)) {
+            popup.classList.add("open");
+            bgPop.classList.add("active");
+            body.classList.add("no-scroll");
+            application.classList.add("invisible");
+          }
+
           const closeBtn = popup.querySelector(".artiste-close-btn-cont");
-          console.log(closeBtn);
 
           if (closeBtn) {
-            console.log("yeedasd");
             closeBtn.addEventListener("click", (e) => {
               e.stopPropagation(); // prevent bubbling
               popup.classList.remove("open");
               bgPop.classList.remove("active");
               body.classList.remove("no-scroll");
+              application.classList.remove("invisible");
             });
           }
           bgPop.addEventListener("click", () => {
             popup.classList.remove("open");
             bgPop.classList.remove("active");
             body.classList.remove("no-scroll");
+            application.classList.remove("invisible");
           });
         });
       });
     });
   }
+
+  {
+    // Artiste section anim
+    const sky = document.querySelector(".sky");
+    const moutains = document.querySelector(".moutains");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#artistes",
+        start: "top 90%",
+        end: "top 10%",
+        scrub: true,
+      },
+    });
+
+    tl.from(sky, {
+      opacity: 0,
+    });
+
+    tl.from(
+      moutains,
+      {
+        y: 100,
+      },
+      "<"
+    );
+    if (window.innerWidth > 768) {
+      tl.from(
+        ".artistes-title",
+        {
+          y: 100,
+        },
+        "<0.3"
+      );
+      tl.from(
+        ".artiste-thumb.desktop",
+        {
+          y: 100,
+          stagger: 0.2,
+        },
+        "<0.3"
+      );
+    }
+  }
+
+  // {
+  //   //fixed partners section
+
+  //   ScrollTrigger.create({
+  //     trigger: ".partners",
+  //     start: "top top",
+  //     markers: true,
+  //     // pin: true,
+  //     onEnter: () => {
+  //       console.log("fixed");
+  //       gsap.set(".partners", { position: "sticky" });
+  //     },
+  //   });
+  // }
 });

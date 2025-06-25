@@ -43,6 +43,13 @@ html {
   }
 }
 
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s;
+}
+
 h2 {
   font-size: 47px;
   font-weight: 300;
