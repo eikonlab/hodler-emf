@@ -242,15 +242,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#artistes",
-        start: "top 90%",
+        start: "top 60%",
         end: "top 10%",
         scrub: true,
       },
     });
 
-    tl.from(sky, {
-      opacity: 0,
-    });
+    tl.fromTo(
+      sky,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 0.5,
+      }
+    );
 
     tl.from(
       moutains,

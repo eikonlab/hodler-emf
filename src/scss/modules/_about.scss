@@ -87,8 +87,8 @@
   text-transform: uppercase;
 
   .about-title-wrapper {
-  display: inline-block;
-  overflow: hidden;
+    display: inline-block;
+    overflow: hidden;
   }
 
   .about-title {
@@ -111,7 +111,6 @@
   justify-content: space-around;
   align-items: stretch;
   gap: 10vh;
-
 }
 
 .about-exposition {
@@ -120,6 +119,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  position: relative;
 }
 
 .about-exposition-title-container {
@@ -139,7 +139,7 @@
 }
 
 .about-exposition-address {
-    &:hover {
+  &:hover {
     background: $light;
     color: $dark;
   }
