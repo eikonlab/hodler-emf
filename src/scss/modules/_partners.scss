@@ -6,10 +6,19 @@
   height: 100vh;
 }
 
-.partners .partners-title {
+.partners-title {
   margin: 0 5vw;
 }
 
-.partners .slider-container {
-  margin: 10vh 0;
+.partners img {
+  width: auto;
+  height: 100px;
+}
+
+.partner-container {
+  margin: 10vh auto;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 10vh;
+  flex-wrap: wrap;
 }
