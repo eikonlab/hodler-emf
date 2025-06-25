@@ -119,7 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animate the title in the about section (title is big text after text of about section)
     const aboutTitle = document.querySelectorAll(".about-title");
-    const aboutTitleContainer = document.querySelector(".about-title-container");
+    const aboutTitleContainer = document.querySelector(
+      ".about-title-container"
+    );
 
     gsap.from(aboutTitle, {
       y: 100,
@@ -134,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
         markers: false,
       },
     });
-
 
     // animate the text exposition of the about section
     const aboutExposition = document.querySelectorAll(".about-exposition");
@@ -181,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popups = document.querySelectorAll(".artiste-popup");
     const bgPop = document.querySelector(".background.artiste");
     const body = document.querySelector("body ");
+    const application = document.querySelector(".application");
 
     thumbs.forEach((thumb) => {
       const value = thumb.dataset.value;
@@ -189,31 +191,53 @@ document.addEventListener("DOMContentLoaded", () => {
       thumb.addEventListener("click", () => {
         console.log("okdasd");
         popups.forEach((popup) => popup.classList.remove("open"));
-        popups.forEach((popup) => {
-          popup.classList.add("open");
-          bgPop.classList.add("active");
-          body.classList.add("no-scroll");
 
-          console.log("yee");
+        popups.forEach((popup) => {
+          if (popup.classList.contains(value)) {
+            popup.classList.add("open");
+            bgPop.classList.add("active");
+            body.classList.add("no-scroll");
+            application.classList.add("invisible");
+          }
+
           const closeBtn = popup.querySelector(".artiste-close-btn-cont");
-          console.log(closeBtn);
 
           if (closeBtn) {
-            console.log("yeedasd");
             closeBtn.addEventListener("click", (e) => {
               e.stopPropagation(); // prevent bubbling
               popup.classList.remove("open");
               bgPop.classList.remove("active");
               body.classList.remove("no-scroll");
+              application.classList.remove("invisible");
             });
           }
           bgPop.addEventListener("click", () => {
             popup.classList.remove("open");
             bgPop.classList.remove("active");
             body.classList.remove("no-scroll");
+            application.classList.remove("invisible");
           });
         });
       });
     });
   }
+
+  {
+    // Artiste section anim
+  }
+
+  // {
+  //   //fixed partners section
+
+  //   ScrollTrigger.create({
+  //     trigger: ".partners",
+  //     start: "top top",
+  //     markers: true,
+  //     // pin: true,
+  //     onEnter: () => {
+  //       console.log("fixed");
+  //       gsap.set(".partners", { position: "sticky" });
+  //     },
+  //   });
+  // }
 });
