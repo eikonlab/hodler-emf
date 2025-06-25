@@ -1,9 +1,9 @@
 .partners {
-  padding: 10vh 0;
-  background: $dark;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100vh; // occupe tout l'écran
+  padding: 10vh 0;
+  background: $dark;
 }
 
 .partners-title {
