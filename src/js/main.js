@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Burger menu
     const burger = document.querySelector(".header-burger-icon");
     const menu = document.querySelector(".header-burger-links");
+    const menuLinks = document.querySelectorAll(".header-burger-link");
     const bg = document.querySelector(".background");
 
     burger.addEventListener("click", () => {
@@ -20,6 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove("active");
       bg.classList.remove("active");
       body.classList.remove("no-scroll");
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          burger.classList.remove("active");
+          menu.classList.remove("active");
+          bg.classList.remove("active");
+          body.classList.remove("no-scroll");
+        }, 200);
+      });
     });
 
     window.addEventListener("resize", () => {
@@ -224,6 +236,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   {
     // Artiste section anim
+    const sky = document.querySelector(".sky");
+    const moutains = document.querySelector(".moutains");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#artistes",
+        start: "top 90%",
+        end: "top 10%",
+        scrub: true,
+      },
+    });
+
+    tl.from(sky, {
+      opacity: 0,
+    });
+
+    tl.from(
+      moutains,
+      {
+        y: 100,
+      },
+      "<"
+    );
+    if (window.innerWidth > 768) {
+      tl.from(
+        ".artistes-title",
+        {
+          y: 100,
+        },
+        "<0.3"
+      );
+      tl.from(
+        ".artiste-thumb.desktop",
+        {
+          y: 100,
+          stagger: 0.2,
+        },
+        "<0.3"
+      );
+    }
   }
 
   // {
