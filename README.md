@@ -36,6 +36,12 @@ npm run build
 
 ## Utilisation
 
+### Extend Artiste
+
+Mettre les infos dans les locals
+
+Pour les images, utiliser la nommencalture _nom de famille de l'artiste_-work.jpg ou -portrait.jpg
+
 ### HTML
 
 Inclure un fichier _header.html_ depuis un fichier HTML

@@ -144,6 +144,10 @@ footer {
   .footer-links {
     height: 97svh;
   }
+
+  .footer-credits {
+    font-size: 18px;
+  }
 }
 
 @include bp("xl") {
