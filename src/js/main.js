@@ -276,26 +276,11 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.from(
         ".artiste-thumb.desktop",
         {
-          y: 100,
+          y: 200,
           stagger: 0.2,
         },
         "<0.3"
       );
     }
   }
-
-  // {
-  //   //fixed partners section
-
-  //   ScrollTrigger.create({
-  //     trigger: ".partners",
-  //     start: "top top",
-  //     markers: true,
-  //     // pin: true,
-  //     onEnter: () => {
-  //       console.log("fixed");
-  //       gsap.set(".partners", { position: "sticky" });
-  //     },
-  //   });
-  // }
 });
