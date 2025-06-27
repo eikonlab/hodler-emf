@@ -1,7 +1,7 @@
 .partners {
   position: sticky;
   top: 0;
-  height: 100vh; // occupe tout l'écran
+  min-height: 100vh; // occupe tout l'écran
   padding: 10vh 0;
   background: $dark;
 }
@@ -14,7 +14,7 @@
   img {
     width: auto;
     height: 100px;
-    max-width: 30vw;
+    max-width: 40vw;
     object-fit: contain;
     transition: scale 0.3s;
   }
@@ -33,4 +33,14 @@
   row-gap: 12vh;
   flex-wrap: wrap;
   gap: 5vw;
+
+  align-items: center;
+}
+
+@include bp("md") {
+  .partner-link {
+    img {
+      max-width: 30vw;
+    }
+  }
 }
