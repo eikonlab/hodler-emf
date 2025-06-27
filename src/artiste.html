@@ -33,7 +33,19 @@
     </div>
     <div class="artiste-popup-flex-img">
       <div class="artiste-popup-flex-description">
-        <block name="description"></block>
+        <div class="artiste-popup-descr">
+          <block name="description"></block>
+          <iframe
+            width="720"
+            height="405"
+            src="{{videoLink}}"
+            title="Presentation of {{fullName}}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
         <div class="artiste-popup-links-cont">
           <block name="links"></block>
         </div>

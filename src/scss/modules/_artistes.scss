@@ -261,9 +261,18 @@
     padding-top: 0;
   }
 
+  .artiste-popup-descr {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    p {
+      line-height: 1.2;
+    }
+  }
+
   .artiste-popup {
     padding: 6vh 4vw;
-    overflow: hidden;
   }
 
   .artiste-close-btn {
@@ -284,9 +293,10 @@
   }
 
   .artiste-popup-img {
-    position: static;
+    position: fixed;
     width: 20vw;
     opacity: 1;
+    bottom: 0;
     object-fit: contain;
     transform: translateY(-10%);
   }

@@ -253,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const bgPop = document.querySelector(".background.artiste");
     const body = document.querySelector("body ");
     const application = document.querySelector(".application");
-    const works = document.querySelectorAll(".artiste-thumb-work-absolute");
 
     thumbs.forEach((thumb) => {
       const value = thumb.dataset.value;
@@ -275,11 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (closeBtn) {
             closeBtn.addEventListener("click", (e) => {
-              e.stopPropagation(); // prevent bubbling
+              // e.stopPropagation(); // prevent bubbling
               popup.classList.remove("open");
               bgPop.classList.remove("active");
               body.classList.remove("no-scroll");
               application.classList.remove("invisible");
+              console.log("closed");
             });
           }
           bgPop.addEventListener("click", () => {
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: "#artistes",
         start: "top 60%",
         end: "top 10%",
-        scrub: 1,
+        scrub: true,
       },
     });
 
@@ -363,14 +363,14 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.from(
         ".artistes-title",
         {
-          y: 200,
+          y: 300,
         },
         "<0.3"
       );
       tl.from(
         ".artiste-thumb.desktop",
         {
-          y: 200,
+          y: 300,
           stagger: 0.2,
         },
         "<0.3"
