@@ -19,9 +19,9 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 20vh;
   left: 4vw;
   width: 92vw;
+  bottom: 10vh;
 }
 
 @include bp("md") {

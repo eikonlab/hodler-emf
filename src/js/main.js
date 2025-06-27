@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: "#artistes",
         start: "top 60%",
         end: "top 10%",
-        scrub: true,
+        scrub: 1,
       },
     });
 
@@ -348,13 +348,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         opacity: 0.5,
+        duration: 1,
       }
     );
 
     tl.from(
       moutains,
       {
-        y: 100,
+        y: 200,
       },
       "<"
     );
@@ -362,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.from(
         ".artistes-title",
         {
-          y: 100,
+          y: 200,
         },
         "<0.3"
       );
