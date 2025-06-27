@@ -11,7 +11,7 @@ footer {
   z-index: -1;
   left: 0;
   right: 0;
-  top: 10vh;
+  top: 0;
   bottom: 0;
 
   &::before {
@@ -121,6 +121,10 @@ footer {
     .frib {
       margin-bottom: 5px;
     }
+  }
+
+  .footer-bg {
+    top: 10vh;
   }
 
   .footer-contact-cont {

@@ -38,7 +38,8 @@
 
 .artiste-thumb-container {
   position: relative;
-  margin-top: 10vh;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
   display: flex;
   flex-direction: column;
 }
@@ -48,6 +49,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: all 0.5s;
+  box-shadow: 0px 34px 24px 0px rgba(0, 0, 0, 0.25);
+  animation: mobileThumbJiggle infinite 10s;
 
   .artiste-thumb-name {
     position: absolute;
@@ -55,6 +59,8 @@
     font-weight: 500;
     text-decoration: underline;
     bottom: 10%;
+    white-space: nowrap;
+    text-shadow: 0px 2px 8px rgba($dark, 0.4);
   }
 
   .artiste-thumb-work {
@@ -183,7 +189,44 @@
   }
 }
 
+.artiste-carrousel-controls {
+  position: absolute;
+  left: 4vw;
+  right: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.artiste-carrousel-control {
+  width: 24px;
+  border: none;
+  background: none;
+
+  &.prev {
+    rotate: 180deg;
+  }
+}
+
+@media (max-width: 767px) {
+  .artiste-carrousel {
+    flex-direction: row;
+    overflow-x: hidden;
+    transition: all 1s;
+  }
+
+  .artiste-carrousel-item {
+    width: 92vw;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @include bp("md") {
+  .artiste-carrousel-controls {
+    display: none;
+  }
   #artistes {
     padding-top: 35vh;
   }
@@ -238,5 +281,17 @@
 
   .artiste-popup-links-cont {
     align-items: flex-end;
+  }
+}
+
+@keyframes mobileThumbJiggle {
+  0% {
+    transform: translateY(-1%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(-1%);
   }
 }

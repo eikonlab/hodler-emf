@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import gsap, { random } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +43,64 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  {
+    // carrousel
+    const carrousel = document.querySelector(".artiste-carrousel");
+    const items = document.querySelectorAll(".artiste-carrousel-item");
+
+    function getItemWidthIncludingMargin() {
+      const style = getComputedStyle(items[0]);
+      const margin =
+        parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      return items[0].offsetWidth + margin;
+    }
+
+    function isAtEnd() {
+      return (
+        Math.ceil(carrousel.scrollLeft + carrousel.offsetWidth) >=
+        carrousel.scrollWidth
+      );
+    }
+
+    function isAtStart() {
+      return carrousel.scrollLeft <= 0;
+    }
+
+    // NEXT (right)
+    document.querySelector(".next").addEventListener("click", () => {
+      const scrollAmount = getItemWidthIncludingMargin();
+      if (isAtEnd()) {
+        carrousel.scrollTo({ left: 0, behavior: "smooth" }); // Go to start
+      } else {
+        carrousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    });
+
+    // PREV (left)
+    document.querySelector(".prev").addEventListener("click", () => {
+      const scrollAmount = getItemWidthIncludingMargin();
+      if (isAtStart()) {
+        carrousel.scrollTo({ left: carrousel.scrollWidth, behavior: "smooth" }); // Go to end
+      } else {
+        carrousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      }
+    });
+  }
+
+  {
+    //random translate for artiste thumb name mobile
+
+    const names = document.querySelectorAll(".artiste-thumb-name.mobile");
+
+    names.forEach((name) => {
+      gsap.set(name, {
+        x: "random(-50, 50)px",
+        y: "random(-10, 30)px",
+      });
+    });
+  }
+
   {
     //header down up
     const header = document.querySelector(".header-nav");
