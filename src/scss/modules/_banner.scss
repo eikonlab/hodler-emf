@@ -1,7 +1,7 @@
 .banner {
   position: sticky;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .banner-title {
-  text-shadow: 0px 0.51px 3.572px rgba(0, 0, 0, 0.35);
+  text-shadow: 0px 0.51px 8px rgba(0, 0, 0, 0.35);
   font-size: 36px;
   font-weight: 900;
   line-height: 105%;
