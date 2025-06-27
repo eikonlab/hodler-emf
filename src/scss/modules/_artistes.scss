@@ -104,6 +104,24 @@
   }
 }
 
+.artiste-thumb-work-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25vh;
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  transform: translate(-50%, -20%);
+
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
 .artiste-thumb-arrow-cont {
   width: 20px;
 }

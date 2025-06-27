@@ -253,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bgPop = document.querySelector(".background.artiste");
     const body = document.querySelector("body ");
     const application = document.querySelector(".application");
+    const works = document.querySelectorAll(".artiste-thumb-work-absolute");
 
     thumbs.forEach((thumb) => {
       const value = thumb.dataset.value;
@@ -289,6 +290,40 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
       });
+
+      // === Hover handler (desktop only) ===
+      if (window.innerWidth > 678) {
+        const thumbs = document.querySelectorAll(".artiste-thumb.desktop");
+        const relativeContainer = document.querySelector(
+          ".artiste-thumb-container"
+        ); // adjust if needed
+
+        thumbs.forEach((thumb) => {
+          const value = thumb.dataset.value;
+          const workImg = document.querySelector(
+            `.artiste-thumb-work-absolute.${value}`
+          );
+
+          if (!workImg) return;
+
+          thumb.addEventListener("mouseenter", () => {
+            workImg.classList.add("visible");
+          });
+
+          relativeContainer.addEventListener("mousemove", (e) => {
+            const rect = thumb.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            workImg.style.left = `${mouseX}px`;
+            workImg.style.top = `${mouseY}px`;
+          });
+
+          thumb.addEventListener("mouseleave", () => {
+            workImg.classList.remove("visible");
+          });
+        });
+      }
     });
   }
 
