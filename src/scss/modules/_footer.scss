@@ -13,6 +13,8 @@ footer {
   right: 0;
   top: 0;
   bottom: 0;
+  display: flex;
+  align-items: flex-end;
 
   &::before {
     content: "";
@@ -124,7 +126,9 @@ footer {
   }
 
   .footer-bg {
-    top: 10vh;
+    img {
+      height: 90%;
+    }
   }
 
   .footer-contact-cont {
@@ -139,5 +143,11 @@ footer {
 
   .footer-links {
     height: 97svh;
+  }
+}
+
+@include bp("xl") {
+  .footer-bg img {
+    object-fit: fill;
   }
 }

@@ -2,7 +2,7 @@
   background: $dark;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 110vh;
   padding-top: 10vh;
 }
 
@@ -72,7 +72,7 @@
   display: none;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0 1vw;
+  padding: 4px 1vw;
   position: relative;
   z-index: 1;
 
@@ -88,8 +88,9 @@
   }
 
   .artiste-thumb-name {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 500;
+    text-shadow: 0px 2px 8px rgba($dark, 0.4);
   }
 
   &:hover {
@@ -101,6 +102,24 @@
     .artiste-thumb-arrow {
       fill: $dark;
     }
+  }
+}
+
+.artiste-thumb-work-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25vh;
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  transform: translate(-50%, -20%);
+
+  &.visible {
+    display: block;
+    opacity: 1;
   }
 }
 
@@ -228,7 +247,7 @@
     display: none;
   }
   #artistes {
-    padding-top: 35vh;
+    padding-top: 15vh;
   }
   .artiste-thumb.mobile {
     display: none;
@@ -239,12 +258,21 @@
     cursor: pointer;
   }
   .artiste-thumb-container {
-    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .artiste-popup-descr {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    p {
+      line-height: 1.2;
+    }
   }
 
   .artiste-popup {
     padding: 6vh 4vw;
-    overflow: hidden;
   }
 
   .artiste-close-btn {
@@ -265,9 +293,12 @@
   }
 
   .artiste-popup-img {
-    position: static;
+    position: fixed;
     width: 20vw;
     opacity: 1;
+    bottom: 0;
+    object-fit: contain;
+    transform: translateY(-10%);
   }
 
   .artiste-popup-flex-description {

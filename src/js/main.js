@@ -274,11 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (closeBtn) {
             closeBtn.addEventListener("click", (e) => {
-              e.stopPropagation(); // prevent bubbling
+              // e.stopPropagation(); // prevent bubbling
               popup.classList.remove("open");
               bgPop.classList.remove("active");
               body.classList.remove("no-scroll");
               application.classList.remove("invisible");
+              console.log("closed");
             });
           }
           bgPop.addEventListener("click", () => {
@@ -289,6 +290,40 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
       });
+
+      // === Hover handler (desktop only) ===
+      if (window.innerWidth > 678) {
+        const thumbs = document.querySelectorAll(".artiste-thumb.desktop");
+        const relativeContainer = document.querySelector(
+          ".artiste-thumb-container"
+        ); // adjust if needed
+
+        thumbs.forEach((thumb) => {
+          const value = thumb.dataset.value;
+          const workImg = document.querySelector(
+            `.artiste-thumb-work-absolute.${value}`
+          );
+
+          if (!workImg) return;
+
+          thumb.addEventListener("mouseenter", () => {
+            workImg.classList.add("visible");
+          });
+
+          relativeContainer.addEventListener("mousemove", (e) => {
+            const rect = thumb.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            workImg.style.left = `${mouseX}px`;
+            workImg.style.top = `${mouseY}px`;
+          });
+
+          thumb.addEventListener("mouseleave", () => {
+            workImg.classList.remove("visible");
+          });
+        });
+      }
     });
   }
 
@@ -313,13 +348,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         opacity: 0.5,
+        duration: 1,
       }
     );
 
     tl.from(
       moutains,
       {
-        y: 100,
+        y: 200,
       },
       "<"
     );
@@ -327,14 +363,14 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.from(
         ".artistes-title",
         {
-          y: 100,
+          y: 300,
         },
         "<0.3"
       );
       tl.from(
         ".artiste-thumb.desktop",
         {
-          y: 200,
+          y: 300,
           stagger: 0.2,
         },
         "<0.3"
