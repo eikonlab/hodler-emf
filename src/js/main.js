@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     names.forEach((name) => {
       gsap.set(name, {
-        x: "random(-50, 50)px",
+        x: "random(-30, 30)px",
         y: "random(-10, 30)px",
       });
     });
@@ -374,6 +374,15 @@ document.addEventListener("DOMContentLoaded", () => {
           stagger: 0.2,
         },
         "<0.3"
+      );
+    } else if (window.innerWidth < 768) {
+      tl.from(
+        ".artiste-carrousel-cont",
+        {
+          y: 400,
+          duration: 1.5,
+        },
+        "<"
       );
     }
   }

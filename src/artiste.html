@@ -32,29 +32,31 @@
       <p class="artiste-popup-type">{{nationality}}</p>
     </div>
     <div class="artiste-popup-flex-img">
-      <div class="artiste-popup-flex-description">
-        <div class="artiste-popup-descr">
-          <block name="description"></block>
-          <iframe
-            width="720"
-            height="405"
-            src="{{videoLink}}"
-            title="Presentation of {{fullName}}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="artiste-popup-links-cont">
-          <block name="links"></block>
-        </div>
-      </div>
       <img
         src="img/artiste-img/{{name}}-portrait.jpg?as=webp"
         alt=""
         class="artiste-popup-img"
       />
+      <div class="artiste-popup-flex-description">
+        <div class="artiste-popup-descr">
+          <block name="description"></block>
+          <div class="artiste-popup-iframe-cont">
+            <iframe
+              width="720"
+              height="405"
+              src="{{videoLink}}"
+              title="Presentation of {{fullName}}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="artiste-popup-links-cont">
+          <block name="links"></block>
+        </div>
+      </div>
     </div>
     <div class="artiste-close-btn-cont">
       <img src="img/cross.svg" aria-label="Close popup" alt="" />

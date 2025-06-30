@@ -60,7 +60,7 @@
     text-decoration: underline;
     bottom: 10%;
     white-space: nowrap;
-    text-shadow: 0px 2px 8px rgba($dark, 0.4);
+    text-shadow: 0px 2px 12px rgba($dark, 0.8);
   }
 
   .artiste-thumb-work {
@@ -172,9 +172,15 @@
   gap: 20px;
 }
 
+.artiste-popup-flex-img {
+  display: flex;
+  flex-direction: column;
+}
+
 .artiste-popup-img {
-  position: absolute;
   width: 30vw;
+  align-self: flex-end;
+  transform: translateY(-10%);
   right: 4vw;
   opacity: 0.6;
   bottom: 4vh;
@@ -184,6 +190,7 @@
 .artiste-popup-links-cont {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
 
   a {
@@ -196,7 +203,7 @@
   }
 }
 .artiste-close-btn-cont {
-  position: absolute;
+  position: fixed;
   top: 4vh;
   right: 4vw;
   transition: 0.3s;
@@ -236,9 +243,19 @@
   }
 
   .artiste-carrousel-item {
-    width: 92vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
+  }
+
+  .no-pad {
+    padding: 0;
+  }
+
+  .artiste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -288,12 +305,14 @@
   }
 
   .artiste-popup-flex-img {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
   .artiste-popup-img {
     position: fixed;
+    align-self: auto;
+    order: 1;
     width: 20vw;
     opacity: 1;
     bottom: 0;
