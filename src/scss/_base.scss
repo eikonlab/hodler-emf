@@ -72,7 +72,9 @@ p {
   p {
     font-size: 24px;
   }
+}
 
+@include bp("lg") {
   h2 {
     font-size: 80px;
   }

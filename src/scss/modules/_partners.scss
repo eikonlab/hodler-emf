@@ -11,6 +11,8 @@
 }
 
 .partner-link {
+  max-width: 40vw;
+
   img {
     width: auto;
     height: 100px;
@@ -32,12 +34,25 @@
   justify-content: space-between;
   row-gap: 12vh;
   flex-wrap: wrap;
-  gap: 5vw;
-
+  gap: 4rem;
   align-items: center;
 }
 
-@include bp("md") {
+@include bp("lg") {
+  .partner-container {
+    gap: 5vw;
+  }
+}
+
+.partner-link {
+  max-width: 44%;
+
+  img {
+    max-width: 30vw;
+  }
+}
+
+@include bp("lg") {
   .partner-link {
     img {
       max-width: 30vw;

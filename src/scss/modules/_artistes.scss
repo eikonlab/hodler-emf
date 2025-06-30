@@ -140,7 +140,6 @@
   background: $dark;
   z-index: 13;
   padding: 4vh 4vw;
-  overflow-y: scroll;
   transition: transform 0.3s;
   transform: translateY(110%);
   opacity: 0;
@@ -151,6 +150,11 @@
     opacity: 1;
     pointer-events: all;
   }
+}
+
+.artiste-popup-container {
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .artiste-popup-head {

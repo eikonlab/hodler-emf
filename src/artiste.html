@@ -27,39 +27,41 @@
 
   <!-- Popups -->
   <div class="artiste-popup {{name}}">
-    <div class="artiste-popup-head">
-      <h3 class="artiste-popup-name">{{fullName}}</h3>
-      <p class="artiste-popup-type">{{nationality}}</p>
-    </div>
-    <div class="artiste-popup-flex-img">
-      <img
-        src="img/artiste-img/{{name}}-portrait.jpg?as=webp"
-        alt=""
-        class="artiste-popup-img"
-      />
-      <div class="artiste-popup-flex-description">
-        <div class="artiste-popup-descr">
-          <block name="description"></block>
-          <div class="artiste-popup-iframe-cont">
-            <iframe
-              width="720"
-              height="405"
-              src="{{videoLink}}"
-              title="Presentation of {{fullName}}"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+    <div class="artiste-popup-container">
+      <div class="artiste-popup-head">
+        <h3 class="artiste-popup-name">{{fullName}}</h3>
+        <p class="artiste-popup-type">{{nationality}}</p>
+      </div>
+      <div class="artiste-popup-flex-img">
+        <img
+          src="img/artiste-img/{{name}}-portrait.jpg?as=webp"
+          alt=""
+          class="artiste-popup-img"
+        />
+        <div class="artiste-popup-flex-description">
+          <div class="artiste-popup-descr">
+            <block name="description"></block>
+            <div class="artiste-popup-iframe-cont">
+              <iframe
+                width="720"
+                height="405"
+                src="{{videoLink}}"
+                title="Presentation of {{fullName}}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="artiste-popup-links-cont">
+            <block name="links"></block>
           </div>
         </div>
-        <div class="artiste-popup-links-cont">
-          <block name="links"></block>
-        </div>
       </div>
-    </div>
-    <div class="artiste-close-btn-cont">
-      <img src="img/cross.svg" aria-label="Close popup" alt="" />
+      <div class="artiste-close-btn-cont">
+        <img src="img/cross.svg" aria-label="Close popup" alt="" />
+      </div>
     </div>
   </div>
   <img

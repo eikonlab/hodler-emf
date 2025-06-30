@@ -1,6 +1,6 @@
-# EMF 130 ans
+# EMF Holder
 
-[130ans.emf.ch](https://130ans.emf.ch)
+[hodler.emf.ch](https://hodler.emf.ch)
 
 ## Prérequis
 
@@ -12,13 +12,13 @@
 Cloner le repository git
 
 ```
-git clone https://github.com/basile-kamm/emf-130.git
+git clone git@github.com:eikonlab/hodler-emf.git
 ```
 
 Se rendre dans le dossier du projet, puis installer les dépendances avec NPM
 
 ```
-cd emf-130
+cd hodler-emf
 npm install
 ```
 
@@ -39,7 +39,7 @@ npm run build
 ## Déploiement
 
 1. Compiler le code avec `npm run build`
-2. Connection en FTP et se rendre dans le répertoire `subdomains/emf/130ans/public`
+2. Connection en FTP et se rendre dans le répertoire `subdomains/emf/hodler/public`
 3. Remplacer le contenu du répertoire par celui se trouvant dans le dossier `/dist`
 
 ### Extend Artiste
