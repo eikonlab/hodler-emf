@@ -3,7 +3,6 @@ name: Deploy static website
 on:
   push:
     branches:
-      - dev
       - main
   pull_request:
     branches:
@@ -42,13 +41,10 @@ jobs:
           retention-days: 30
 
   deploy:
-    name: Deploy to ${{ github.ref == 'refs/heads/main' && 'Production' || 'Staging' }}
+    name: Deploy to Production
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'push' # Ne déployer que sur push, pas sur PR
-
-    environment:
-      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
 
     steps:
       - name: Download build artifacts
@@ -64,7 +60,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ${{ github.ref == 'refs/heads/main' && secrets.FTP_PATH_PROD || secrets.FTP_PATH_STAGING }}
+          server-dir: ${{ secrets.FTP_PATH_PROD }}
           # Options avancées
           exclude: |
             **/.git*
