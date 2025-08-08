@@ -62,14 +62,16 @@ h2 {
   text-transform: uppercase;
 }
 
-p {
+p,
+li {
   font-size: 20px;
   font-weight: 400;
   line-height: 110%; /* 112.5% */
 }
 
 @include bp("md") {
-  p {
+  p,
+  li {
     font-size: 24px;
   }
 }
