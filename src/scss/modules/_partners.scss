@@ -36,6 +36,10 @@
   flex-wrap: wrap;
   gap: 4rem;
   align-items: center;
+
+  .white-bg {
+    background-color: white;
+  }
 }
 
 @include bp("lg") {
@@ -50,12 +54,20 @@
   img {
     max-width: 30vw;
   }
+
+  &.bigger img {
+    width: 15vw;
+  }
 }
 
 @include bp("lg") {
   .partner-link {
     img {
       max-width: 30vw;
+    }
+
+    &.bigger img {
+      width: 15vw;
     }
   }
 }
