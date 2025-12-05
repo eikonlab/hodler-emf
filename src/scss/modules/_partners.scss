@@ -58,6 +58,10 @@
   &.bigger img {
     width: 15vw;
   }
+
+  &.higher img {
+    height: 150px;
+  }
 }
 
 @include bp("lg") {
@@ -68,6 +72,10 @@
 
     &.bigger img {
       width: 15vw;
+    }
+
+    &.higher img {
+      height: 250px;
     }
   }
 }
