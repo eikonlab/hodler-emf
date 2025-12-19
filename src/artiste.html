@@ -42,7 +42,10 @@
           <div class="artiste-popup-descr">
             <block name="description"></block>
             <div class="artiste-popup-iframe-cont">
-              <iframe
+              <video controls width="720">
+                <source src="{{videoLink}}" type="video/mp4" />
+              </video>
+              <!-- <iframe
                 width="720"
                 height="405"
                 src="{{videoLink}}"
@@ -51,7 +54,7 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
-              ></iframe>
+              ></iframe> -->
             </div>
           </div>
           <div class="artiste-popup-links-cont">

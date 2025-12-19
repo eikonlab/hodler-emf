@@ -252,7 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const popups = document.querySelectorAll(".artiste-popup");
     const bgPop = document.querySelector(".background.artiste");
     const body = document.querySelector("body ");
-    const application = document.querySelector(".application");
 
     thumbs.forEach((thumb) => {
       const value = thumb.dataset.value;
@@ -263,11 +262,12 @@ document.addEventListener("DOMContentLoaded", () => {
         popups.forEach((popup) => popup.classList.remove("open"));
 
         popups.forEach((popup) => {
+          const video = popup.querySelector("video");
           if (popup.classList.contains(value)) {
             popup.classList.add("open");
             bgPop.classList.add("active");
             body.classList.add("no-scroll");
-            application.classList.add("invisible");
+            video.play();
           }
 
           const closeBtn = popup.querySelector(".artiste-close-btn-cont");
@@ -278,7 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
               popup.classList.remove("open");
               bgPop.classList.remove("active");
               body.classList.remove("no-scroll");
-              application.classList.remove("invisible");
+              video.pause();
+              video.currentTime = 0;
               console.log("closed");
             });
           }
@@ -286,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
             popup.classList.remove("open");
             bgPop.classList.remove("active");
             body.classList.remove("no-scroll");
-            application.classList.remove("invisible");
+            video.play();
           });
         });
       });
