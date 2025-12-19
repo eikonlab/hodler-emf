@@ -18,6 +18,16 @@ video {
   display: block;
 }
 
+video {
+  width: 100%;
+}
+
+@include bp("lg") {
+  video {
+    max-width: 720px;
+  }
+}
+
 body {
   font-family: "Satoshi", sans-serif;
   color: $light;
